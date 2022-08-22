@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import ReactDOM from 'react-dom/client';
 import { Amplify } from 'aws-amplify';
 import config from './config';
+import { initSentry } from "./lib/errorLib";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import './index.css';
@@ -10,6 +11,7 @@ import App from './App';
 
 import reportWebVitals from './reportWebVitals';
 
+initSentry();
 Amplify.configure({
   Auth: {
     mandatorySignIn: true,
